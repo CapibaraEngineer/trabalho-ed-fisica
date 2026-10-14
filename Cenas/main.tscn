@@ -7,18 +7,9 @@
 [node name="Main" type="Node" unique_id=1911086733]
 
 [node name="Player1" parent="." unique_id=1248487080 instance=ExtResource("2_ruij7")]
-position = Vector2(-173, 429)
 
 [node name="Chão" parent="." unique_id=614955866 instance=ExtResource("1_74bqr")]
-position = Vector2(-908, 571)
-
-[node name="Chão2" parent="." unique_id=1185170381 instance=ExtResource("1_74bqr")]
-position = Vector2(-499, 571)
-scale = Vector2(8, 1)
+position = Vector2(69, 210)
 
 [node name="Player2" parent="." unique_id=742366973 instance=ExtResource("3_ruij7")]
-position = Vector2(-846, 453)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1769185961]
-position = Vector2(-31, 245)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(34, 37)
