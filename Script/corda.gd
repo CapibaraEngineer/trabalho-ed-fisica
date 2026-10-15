@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		elif pode_conectar:
 			conectada = true
 	#fisica da corda
-	if conectada == true and distance > distancia_corda:
+	if conectada and distance > distancia_corda:
 		var direcao = (player2.global_position - player1.global_position).normalized()
 		player1.forca_corda = direcao * forca_maxima
 		player2.forca_corda = (direcao * forca_maxima) *  -1
