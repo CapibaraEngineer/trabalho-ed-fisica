@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dn1w7ov110cg7"]
+
+[ext_resource type="Script" uid="uid://cpe6upt7u4df4" path="res://Scripts/Rede.gd" id="1_x3hk2"]
+[ext_resource type="PackedScene" uid="uid://dukk7qohbitj5" path="res://Cenas/player_1.tscn" id="2_ruij7"]
+[ext_resource type="PackedScene" uid="uid://dtiln6s0efhp2" path="res://Cenas/menu.tscn" id="3_ruij7"]
+
+[node name="main" type="Node2D" unique_id=2011800689]
+
+[node name="Rede" type="Node" parent="." unique_id=631975530]
+editor_description = "Este Nó representa grande parte de toda a logica ed conecxão dos jogadores na cena."
+script = ExtResource("1_x3hk2")
+cena_jogador = ExtResource("2_ruij7")
+
+[node name="Jogadores" type="Node2D" parent="." unique_id=1021592204]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1054177771]
+_spawnable_scenes = PackedStringArray("uid://dukk7qohbitj5")
+spawn_path = NodePath("../Jogadores")
+
+[node name="Control" type="Control" parent="." unique_id=1919080849]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="menu" parent="Control" unique_id=573269153 instance=ExtResource("3_ruij7")]
+layout_mode = 1
