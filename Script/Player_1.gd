@@ -12,6 +12,16 @@ var forca_corda = Vector2.ZERO
 func resetarProSpawn() -> void:
 	global_position = spawn_point
 
+func morrer() -> void:
+	resetarProSpawn()
+	get_node("../Player2").resetarProSpawn()
+
+func checarColisaoEspinho() -> void:
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i).get_collider()
+		if(collision.name == "SpikeLayer"):
+			morrer()
+
 func _ready() -> void:
 	global_position = spawn_point
 
@@ -22,6 +32,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		pulos = 0
 	else: #not is_on_floor()
+		if pulos == 0:
+			pulos = 1
 		velocity.y += GRAVITY * delta
 	
 	if Input.is_action_just_pressed("P1 pulo") and pulos < MAXIMO_DE_PULOS:
@@ -32,9 +44,4 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	if get_slide_collision_count() > 0:
-		var collision = get_slide_collision(0).get_collider()
-		if(collision.name == "SpikeLayer"):
-			get_node("../../Level1").resetPlayers()
-		
-	
+	checarColisaoEspinho()
