@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+@onready var spawn_point = get_node("../SpawnP2").global_position
+
 #MOVIMENTAÇÃO
 const GRAVITY = 1000
 const SPEED = 300
@@ -13,6 +16,12 @@ const DASH_SPEED = 1000
 #controle da habilidade
 var pode_dar_dash = true
 var dash_timer = 0.0
+
+func resetarProSpawn() -> void:
+	global_position = spawn_point
+	
+func _ready() -> void:
+	global_position = spawn_point
 
 func _physics_process(delta: float) -> void:
 	#Movimentaçao de um lado pro outro
@@ -45,4 +54,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 		
 	velocity += forca_corda
+	
 	move_and_slide()
+	
+	if get_slide_collision_count() > 0:
+		var collision = get_slide_collision(0).get_collider()
+		if(collision.name == "SpikeLayer"):
+			get_node("../../Level1").resetPlayers()
+	
