@@ -22,7 +22,7 @@ func resetarProSpawn() -> void:
 
 func morrer() -> void:
 	resetarProSpawn()
-	get_node("../dPlayer1").resetarProSpawn()
+	get_node("../Player1").resetarProSpawn()
 
 func _ready() -> void:
 	global_position = spawn_point
