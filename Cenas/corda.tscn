@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bu7yxo5l0olrx"]
+
+[ext_resource type="Script" uid="uid://c3fpioiqq0b6c" path="res://Script/corda.gd" id="1_tqlyh"]
+
+[node name="Corda" type="Node2D" unique_id=694860497]
+script = ExtResource("1_tqlyh")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=907960152]
+width = 5.0
+begin_cap_mode = 2
+end_cap_mode = 2

@@ -3,13 +3,31 @@
 [ext_resource type="PackedScene" uid="uid://bx7f2f1crngwv" path="res://Cenas/chão.tscn" id="1_74bqr"]
 [ext_resource type="PackedScene" uid="uid://d1qnkihm1p6hg" path="res://Cenas/Player1.tscn" id="2_ruij7"]
 [ext_resource type="PackedScene" uid="uid://ckpwm8p2w4hfm" path="res://Cenas/player_2.tscn" id="3_ruij7"]
+[ext_resource type="Script" uid="uid://b37qyl8blbxa" path="res://Script/player_2.gd" id="4_ja1os"]
+[ext_resource type="PackedScene" uid="uid://bu7yxo5l0olrx" path="res://Cenas/corda.tscn" id="4_lb8y5"]
 
 [node name="Main" type="Node" unique_id=1911086733]
 
 [node name="Player1" parent="." unique_id=1248487080 instance=ExtResource("2_ruij7")]
+position = Vector2(-716, 437)
 
 [node name="Chão" parent="." unique_id=614955866 instance=ExtResource("1_74bqr")]
-position = Vector2(69, 210)
+position = Vector2(-844, 554)
+
+[node name="Chão2" parent="." unique_id=1185170381 instance=ExtResource("1_74bqr")]
+position = Vector2(50, 555)
+scale = Vector2(1.5, 1)
+
+[node name="Chão3" parent="." unique_id=885395907 instance=ExtResource("1_74bqr")]
+position = Vector2(541, 531)
+scale = Vector2(1.5, 7)
 
 [node name="Player2" parent="." unique_id=742366973 instance=ExtResource("3_ruij7")]
-position = Vector2(34, 37)
+position = Vector2(-639, 472)
+script = ExtResource("4_ja1os")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1769185961]
+position = Vector2(-31, 245)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Corda" parent="." unique_id=694860497 instance=ExtResource("4_lb8y5")]
