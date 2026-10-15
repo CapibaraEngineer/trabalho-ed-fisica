@@ -12,7 +12,8 @@
 position = Vector2(-716, 437)
 
 [node name="Chão" parent="." unique_id=614955866 instance=ExtResource("1_74bqr")]
-position = Vector2(-844, 554)
+position = Vector2(-951, 554)
+scale = Vector2(1.6799998, 1)
 
 [node name="Chão2" parent="." unique_id=1185170381 instance=ExtResource("1_74bqr")]
 position = Vector2(50, 555)
