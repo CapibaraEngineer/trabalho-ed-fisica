@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://cw8jj0g73euuh"]
 
-[ext_resource type="Script" uid="uid://bi72nfo65nyw5" path="res://Cenas/Levels/level_1.gd" id="1_63856"]
 [ext_resource type="PackedScene" uid="uid://d1qnkihm1p6hg" path="res://Cenas/Player1.tscn" id="2_0sido"]
 [ext_resource type="TileSet" uid="uid://d3cempud13d76" path="res://TileSets/Terreno_tileset.tres" id="2_vxx1v"]
 [ext_resource type="PackedScene" uid="uid://ckpwm8p2w4hfm" path="res://Cenas/player_2.tscn" id="3_0u7db"]
@@ -8,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bu7yxo5l0olrx" path="res://Cenas/corda.tscn" id="4_0sido"]
 
 [node name="Level1" type="Node2D" unique_id=569392604]
-script = ExtResource("1_63856")
 
 [node name="TileMap" type="Node2D" parent="." unique_id=1036148905]
 
