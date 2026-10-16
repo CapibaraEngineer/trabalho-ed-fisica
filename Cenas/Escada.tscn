@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dg2yyt1c0b6sh"]
+
+[ext_resource type="Script" uid="uid://bc507ywps0sy0" path="res://Script/escada.gd" id="1_escada"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_escada"]
+size = Vector2(40, 160)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_escada"]
+
+[node name="Escada" type="Area2D" unique_id=1938658218]
+scale = Vector2(1, 0.24000046)
+collision_mask = 2
+script = ExtResource("1_escada")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411559101]
+shape = SubResource("RectangleShape2D_escada")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=686571216]
+scale = Vector2(40, 160)
+texture = SubResource("PlaceholderTexture2D_escada")

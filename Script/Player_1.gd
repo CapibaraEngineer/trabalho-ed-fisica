@@ -6,10 +6,19 @@ const SPEED = 250
 const GRAVITY = 1000
 const JUMP_SPEED = -400
 const MAXIMO_DE_PULOS = 2
+const ESCADA_VELOCIDADE = 150
 var pulos = 0
 var forca_corda = Vector2.ZERO
+var na_escada = false
+
+func entrar_na_escada() -> void:
+	na_escada = true
+
+func sair_da_escada() -> void:
+	na_escada = false
 
 func resetarProSpawn() -> void:
+	na_escada = false
 	global_position = spawn_point
 
 func morrer() -> void:
@@ -29,14 +38,16 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("P1 esquerda", "P1 direita")
 	velocity.x = direction * SPEED
 	
-	if is_on_floor():
+	if na_escada and Input.is_action_pressed("P1 pulo"):
+		velocity.y = -ESCADA_VELOCIDADE
+	elif is_on_floor():
 		pulos = 0
 	else: #not is_on_floor()
 		if pulos == 0:
 			pulos = 1
 		velocity.y += GRAVITY * delta
 	
-	if Input.is_action_just_pressed("P1 pulo") and pulos < MAXIMO_DE_PULOS:
+	if not na_escada and Input.is_action_just_pressed("P1 pulo") and pulos < MAXIMO_DE_PULOS:
 		pulos += 1
 		velocity.y = JUMP_SPEED
 	

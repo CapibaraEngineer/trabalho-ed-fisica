@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bbvqvegtv61u0"]
+
+[ext_resource type="TileSet" uid="uid://d3cempud13d76" path="res://TileSets/Terreno_tileset.tres" id="1_ed160"]
+[ext_resource type="TileSet" uid="uid://b7a1llvpyh638" path="res://TileSets/espinho_tileset.tres" id="2_ahv31"]
+
+[node name="GameTileMap" type="Node2D" unique_id=857521556]
+
+[node name="TerrainLayer" type="TileMapLayer" parent="." unique_id=383812868]
+tile_set = ExtResource("1_ed160")
+
+[node name="SpikeLayer" type="TileMapLayer" parent="." unique_id=869513399]
+tile_set = ExtResource("2_ahv31")
