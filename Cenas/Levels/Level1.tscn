@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bbvqvegtv61u0" path="res://Cenas/gameTileMap.tscn" id="1_0u7db"]
 [ext_resource type="PackedScene" uid="uid://d1qnkihm1p6hg" path="res://Cenas/Player1.tscn" id="2_0sido"]
-[ext_resource type="PackedScene" uid="uid://ckpwm8p2w4hfm" path="res://Cenas/player_2.tscn" id="3_0u7db"]
+[ext_resource type="PackedScene" uid="uid://ckpwm8p2w4hfm" path="res://Cenas/Player_2.tscn" id="3_0u7db"]
 [ext_resource type="PackedScene" uid="uid://bu7yxo5l0olrx" path="res://Cenas/corda.tscn" id="4_0sido"]
+[ext_resource type="PackedScene" path="res://Cenas/Escada.tscn" id="6_63856"]
 [ext_resource type="PackedScene" uid="uid://dgejegbhcpao3" path="res://Cenas/win_areas.tscn" id="6_vxx1v"]
 
 [node name="Level1" type="Node2D" unique_id=569392604]
@@ -44,6 +45,11 @@ position = Vector2(-95, -3)
 
 [node name="WinAreaP2" parent="WinAreas" index="1" unique_id=1819418861]
 position = Vector2(91, -4)
+
+[node name="Escada" parent="." unique_id=547553863 instance=ExtResource("6_63856")]
+modulate = Color(1, 1, 1, 0.3137255)
+position = Vector2(62.000004, 7.999999)
+scale = Vector2(-0.8836055, 0.891838)
 
 [editable path="GameTileMap"]
 [editable path="WinAreas"]

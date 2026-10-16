@@ -7,4 +7,4 @@ O jogo é de plataforma, com puzzles
 
 Ele baseia-se na mecanica da corda e habilidades únicas do jogador.
 
-Leia [Design.md](Design.md) para detalhes
+Leia [Design.md](docs/Design.md) para detalhes
