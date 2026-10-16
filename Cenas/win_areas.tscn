@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dgejegbhcpao3"]
+
+[ext_resource type="Script" uid="uid://c83uu0uapfvq3" path="res://Script/win_areas.gd" id="1_lcmjs"]
+[ext_resource type="Script" uid="uid://60bmxb00iic0" path="res://Script/win_area_check.gd" id="2_hja3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lweaw"]
+size = Vector2(96.5, 74.75)
+
+[node name="WinAreas" type="Node2D" unique_id=879724064]
+script = ExtResource("1_lcmjs")
+
+[node name="WinAreaP1" type="Area2D" parent="." unique_id=457774391]
+position = Vector2(-59, -2)
+collision_mask = 3
+script = ExtResource("2_hja3n")
+playerChecado = "Player1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinAreaP1" unique_id=378407727]
+shape = SubResource("RectangleShape2D_lweaw")
+
+[node name="WinAreaP2" type="Area2D" parent="." unique_id=1819418861]
+position = Vector2(64, -2)
+collision_mask = 3
+script = ExtResource("2_hja3n")
+playerChecado = "Player2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinAreaP2" unique_id=1138491590]
+shape = SubResource("RectangleShape2D_lweaw")

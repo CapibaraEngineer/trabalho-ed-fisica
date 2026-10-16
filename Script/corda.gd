@@ -6,11 +6,20 @@ extends Node2D
 
 var conectada = false
 var pode_conectar = false
-const forca_maxima = 80
+var P1_puxando = false
+var P2_puxando = false
+
+const forca_maxima = 100
+const forca_puxada = 30
 const distancia_corda = 400
 
+
 func _process(delta: float) -> void:
-	#input pra corda conectar
+	# Controle dos botões da corda
+	P1_puxando = Input.is_action_pressed("P1 puxar corda")
+	P2_puxando = Input.is_action_pressed("P2 puxar corda")
+
+	# Mostrar a corda
 	if conectada == false:
 		linha.hide()
 	else:
@@ -18,13 +27,16 @@ func _process(delta: float) -> void:
 		linha.add_point(player1.global_position)
 		linha.add_point(player2.global_position)
 		linha.show()
-		
+
+	# Distância entre os jogadores
 	var distance = player1.global_position.distance_to(player2.global_position)
+
 	if distance <= 200:
 		pode_conectar = true
 	else:
 		pode_conectar = false
-		
+
+	# Conectar e desconectar a corda
 	if Input.is_action_just_pressed("conectar corda"):
 		if conectada:
 			conectada = false
@@ -32,8 +44,19 @@ func _process(delta: float) -> void:
 			player2.forca_corda = Vector2.ZERO
 		elif pode_conectar:
 			conectada = true
-	#fisica da corda
+
+	# Física da corda
+	var direcao = (player2.global_position - player1.global_position).normalized()
+
 	if conectada and distance > distancia_corda:
-		var direcao = (player2.global_position - player1.global_position).normalized()
 		player1.forca_corda = direcao * forca_maxima
-		player2.forca_corda = (direcao * forca_maxima) *  -1
+		player2.forca_corda = -direcao * forca_maxima
+	elif conectada and P1_puxando and distance > 60:
+		player1.forca_corda = Vector2.ZERO
+		player2.forca_corda = -direcao * forca_puxada
+	elif conectada and P2_puxando and distance > 60:
+		player1.forca_corda = direcao * forca_puxada
+		player2.forca_corda = Vector2.ZERO
+	else:
+		player1.forca_corda = Vector2.ZERO
+		player2.forca_corda = Vector2.ZERO
