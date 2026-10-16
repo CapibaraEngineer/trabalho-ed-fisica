@@ -1,27 +1,42 @@
 [gd_scene format=3 uid="uid://dn1w7ov110cg7"]
 
-[ext_resource type="Script" uid="uid://cpe6upt7u4df4" path="res://Scripts/Rede.gd" id="1_x3hk2"]
+[ext_resource type="Script" uid="uid://cpe6upt7u4df4" path="res://Scripts/rede_main.gd" id="1_x3hk2"]
 [ext_resource type="PackedScene" uid="uid://dukk7qohbitj5" path="res://Cenas/player_1.tscn" id="2_ruij7"]
-[ext_resource type="PackedScene" uid="uid://dtiln6s0efhp2" path="res://Cenas/menu.tscn" id="3_ruij7"]
+[ext_resource type="PackedScene" uid="uid://de65xk62f284p" path="res://Cenas/player_2.tscn" id="3_ruij7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0vtqy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0duit"]
+distance = -666.0
 
 [node name="main" type="Node2D" unique_id=2011800689]
 
 [node name="Rede" type="Node" parent="." unique_id=631975530]
 editor_description = "Este Nó representa grande parte de toda a logica ed conecxão dos jogadores na cena."
 script = ExtResource("1_x3hk2")
-cena_jogador = ExtResource("2_ruij7")
+cena_jogador1 = ExtResource("2_ruij7")
+cena_jogador2 = ExtResource("3_ruij7")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1054177771]
+spawn_path = NodePath("../Jogadores")
 
 [node name="Jogadores" type="Node2D" parent="." unique_id=1021592204]
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1054177771]
-_spawnable_scenes = PackedStringArray("uid://dukk7qohbitj5")
-spawn_path = NodePath("../Jogadores")
+[node name="Temp_chao" type="StaticBody2D" parent="." unique_id=2099567735]
 
-[node name="Control" type="Control" parent="." unique_id=1919080849]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+[node name="Sprite2D" type="Sprite2D" parent="Temp_chao" unique_id=186195949]
+position = Vector2(643, 690)
+scale = Vector2(1282.5, 56.5)
+texture = SubResource("PlaceholderTexture2D_0vtqy")
 
-[node name="menu" parent="Control" unique_id=573269153 instance=ExtResource("3_ruij7")]
-layout_mode = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Temp_chao" unique_id=1907379773]
+shape = SubResource("WorldBoundaryShape2D_0duit")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1705513808]
+position = Vector2(641, 360)
+
+[node name="SpawnPointP1" type="Marker2D" parent="." unique_id=889069550]
+position = Vector2(81, 512)
+
+[node name="SpawnPointP2" type="Marker2D" parent="." unique_id=113649492]
+position = Vector2(161, 510)

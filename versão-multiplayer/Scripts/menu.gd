@@ -1,17 +1,18 @@
 extends Control
 
+@onready var rede = $"Rede"
 
 func _on_host_pressed() -> void:
-	$"../../Rede".criar_host()
-	queue_free()
+	rede.criar_host()
+	get_tree().change_scene_to_file("res://Cenas/main.tscn")
 
 func _on_join_pressed() -> void:
 	var ip = get_ip()
 	if ip == "":
 		print("Não foi possivel encontrar o IP da rede")
 		return
-	$"../../Rede".entrar_no_jogo(ip)
-	queue_free()
+	rede.entrar_no_jogo(ip)
+	get_tree().change_scene_to_file("res://Cenas/main.tscn")
 
 func get_ip() -> String:
 	var ips = IP.get_local_addresses()
