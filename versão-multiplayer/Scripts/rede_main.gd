@@ -6,6 +6,7 @@ extends Node
 @onready var jogadores: Node2D = $"../Jogadores"
 @onready var spawner: MultiplayerSpawner = $"../MultiplayerSpawner"
 
+
 func _ready() -> void:
 	spawner.spawn_path = NodePath("../Jogadores")
 	spawner.spawn_function = Callable(self, "_spawn_player")
@@ -17,7 +18,6 @@ func _ready() -> void:
 	multiplayer.connected_to_server.connect(_ao_conectar)
 	multiplayer.connection_failed.connect(_ao_falhar)
 	multiplayer.server_disconnected.connect(_ao_desconectar)
-	#multiplayer.peer_connected.connect(_jogador_conectado)
 	multiplayer.peer_disconnected.connect(_jogador_desconectado)
 
 func _on_peer_connected(id: int):
@@ -28,7 +28,6 @@ func _spawn_player(data: Variant) -> Node:
 	var id: int = int(data["peer_id"])
 	
 	var jogador: Node
-	jogador = cena_jogador1.instantiate()
 	if id == 1:
 		jogador = cena_jogador1.instantiate()
 	else:
