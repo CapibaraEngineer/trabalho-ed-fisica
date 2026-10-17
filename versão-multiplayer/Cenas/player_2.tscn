@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://de65xk62f284p"]
 
-[ext_resource type="Script" uid="uid://dd01mom5jb53y" path="res://Cenas/player_2.gd" id="1_r322i"]
+[ext_resource type="Script" uid="uid://dd01mom5jb53y" path="res://Scripts/player_2.gd" id="1_r322i"]
+[ext_resource type="PackedScene" uid="uid://ceo32k23ruwau" path="res://Cenas/corda.tscn" id="2_45ong"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0duit"]
 
@@ -14,6 +15,7 @@ properties/0/replication_mode = 1
 
 [node name="Player2" type="CharacterBody2D" unique_id=290630059]
 script = ExtResource("1_r322i")
+corda = ExtResource("2_45ong")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=947965691]
 scale = Vector2(28, 28)
