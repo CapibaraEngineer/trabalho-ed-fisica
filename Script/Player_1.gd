@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var spawn_point = get_node("../SpawnP1").global_position
+@onready var spawn_point = get_node("../SpawnP1")
 
 const SPEED = 250
 const GRAVITY = 1000
@@ -19,11 +19,18 @@ func sair_da_escada() -> void:
 
 func resetarProSpawn() -> void:
 	na_escada = false
-	global_position = spawn_point
+	if(spawn_point != null):
+		global_position = spawn_point.global_position
+	else:
+		print("Spawn point invalido do P1!")
 
 func morrer() -> void:
 	resetarProSpawn()
-	get_node("../Player2").resetarProSpawn()
+	var player2 = get_node("../Player2")
+	if player2 != null:
+		player2.resetarProSpawn()
+	else:
+		print("Falha em achar Player 2")
 
 func checarColisaoEspinho() -> void:
 	for i in get_slide_collision_count():
@@ -32,7 +39,10 @@ func checarColisaoEspinho() -> void:
 			morrer()
 
 func _ready() -> void:
-	global_position = spawn_point
+	if(spawn_point != null):
+		global_position = spawn_point.global_position
+	else:
+		print("Spawn point invalido do P1!")
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("P1 esquerda", "P1 direita")
