@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d1qnkihm1p6hg" path="res://Cenas/Player1.tscn" id="2_0sido"]
 [ext_resource type="PackedScene" uid="uid://ckpwm8p2w4hfm" path="res://Cenas/Player_2.tscn" id="3_0u7db"]
 [ext_resource type="PackedScene" uid="uid://bu7yxo5l0olrx" path="res://Cenas/corda.tscn" id="4_0sido"]
-[ext_resource type="PackedScene" path="res://Cenas/Escada.tscn" id="6_63856"]
+[ext_resource type="PackedScene" uid="uid://dg2yyt1c0b6sh" path="res://Cenas/Escada.tscn" id="6_63856"]
 [ext_resource type="PackedScene" uid="uid://dgejegbhcpao3" path="res://Cenas/win_areas.tscn" id="6_vxx1v"]
 
 [node name="Level1" type="Node2D" unique_id=569392604]
