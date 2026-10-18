@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ckpwm8p2w4hfm"]
+[gd_scene format=3 uid="uid://qe2l2qv83skb"]
 
 [ext_resource type="Script" uid="uid://b37qyl8blbxa" path="res://Script/Player_2.gd" id="1_r322i"]
 [ext_resource type="SpriteFrames" path="res://sprites/garibaldo-verdinho/garibaldo_animations.tres" id="2_anim"]
