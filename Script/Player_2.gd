@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var spawn_point = get_node("../SpawnP2")
+@onready var sprite = $AnimatedSprite2D
 
 #MOVIMENTAÇÃO
 const GRAVITY = 1000
@@ -52,6 +53,21 @@ func checarColisaoEspinho() -> void:
 		if(collision.name == "SpikeLayer"):
 			morrer()
 
+func atualizarAnimacao(direction: float) -> void:
+	sprite.flip_h = direcao_olhando < 0
+
+	if dash_timer > 0.0:
+		sprite.play("dash")
+	elif not is_on_floor():
+		if velocity.y < 0:
+			sprite.play("jump")
+		else:
+			sprite.play("fall")
+	elif direction != 0:
+		sprite.play("walk")
+	else:
+		sprite.play("idle")
+
 func _physics_process(delta: float) -> void:
 	#Movimentaçao de um lado pro outro
 	var direction = Input.get_axis("P2 esquerda", "P2 direita")
@@ -68,8 +84,10 @@ func _physics_process(delta: float) -> void:
 	elif is_on_floor():
 		pode_dar_dash = true
 	else: #not is_on_floor()
-		velocity.y += GRAVITY * delta
-		
+		if not dash_timer > 0.0:
+			velocity.y += GRAVITY * delta
+		else :
+			velocity.y = 0
 	if not na_escada and Input.is_action_just_pressed("P2 pulo") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
@@ -85,5 +103,6 @@ func _physics_process(delta: float) -> void:
 	velocity += forca_corda
 	
 	move_and_slide()
-	
+
 	checarColisaoEspinho()
+	atualizarAnimacao(direction)

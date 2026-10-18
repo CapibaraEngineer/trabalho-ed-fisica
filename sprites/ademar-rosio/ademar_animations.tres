@@ -1,0 +1,68 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://t4bp5p1j8b3l"]
+
+[ext_resource type="Texture2D" uid="uid://0y5y2cgvpikx" path="res://sprites/ademar-rosio/ademar-djump.png" id="1_bj848"]
+[ext_resource type="Texture2D" uid="uid://cw318fb2htujv" path="res://sprites/ademar-rosio/ademar-fall.png" id="2_cft2c"]
+[ext_resource type="Texture2D" uid="uid://dgqtljnnt3htu" path="res://sprites/ademar-rosio/ademar-idle.png" id="3_wvlxy"]
+[ext_resource type="Texture2D" uid="uid://bukaarfhiv4mo" path="res://sprites/ademar-rosio/ademar-jump.png" id="4_wx04t"]
+[ext_resource type="Texture2D" uid="uid://cborxotcaits1" path="res://sprites/ademar-rosio/ademar-run.png" id="5_lwitv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghy5i"]
+atlas = ExtResource("5_lwitv")
+region = Rect2(0, 0, 32, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmudh"]
+atlas = ExtResource("5_lwitv")
+region = Rect2(32, 0, 32, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yy45"]
+atlas = ExtResource("5_lwitv")
+region = Rect2(64, 0, 32, 46)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bj848")
+}],
+"loop": 0,
+"name": &"djump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cft2c")
+}],
+"loop": 0,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wvlxy")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wx04t")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghy5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmudh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yy45")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
