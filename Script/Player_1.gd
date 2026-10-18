@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var spawn_point = get_node("../SpawnP1")
+@onready var sprite = $AnimatedSprite2D
 
 const SPEED = 250
 const GRAVITY = 1000
@@ -10,6 +11,7 @@ const ESCADA_VELOCIDADE = 150
 var pulos = 0
 var forca_corda = Vector2.ZERO
 var na_escada = false
+var direcao_olhando = 1
 
 func entrar_na_escada() -> void:
 	na_escada = true
@@ -38,6 +40,24 @@ func checarColisaoEspinho() -> void:
 		if(collision.name == "SpikeLayer"):
 			morrer()
 
+func atualizarAnimacao(direction: float) -> void:
+	if direction != 0:
+		direcao_olhando = direction
+	sprite.flip_h = direcao_olhando < 0
+
+	if not is_on_floor():
+		if velocity.y < 0:
+			if pulos >= MAXIMO_DE_PULOS:
+				sprite.play("djump")
+			else:
+				sprite.play("jump")
+		else:
+			sprite.play("fall")
+	elif direction != 0:
+		sprite.play("run")
+	else:
+		sprite.play("idle")
+
 func _ready() -> void:
 	if(spawn_point != null):
 		global_position = spawn_point.global_position
@@ -47,7 +67,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("P1 esquerda", "P1 direita")
 	velocity.x = direction * SPEED
-	
+
 	if na_escada and Input.is_action_pressed("P1 pulo"):
 		velocity.y = -ESCADA_VELOCIDADE
 	elif is_on_floor():
@@ -56,13 +76,14 @@ func _physics_process(delta: float) -> void:
 		if pulos == 0:
 			pulos = 1
 		velocity.y += GRAVITY * delta
-	
+
 	if not na_escada and Input.is_action_just_pressed("P1 pulo") and pulos < MAXIMO_DE_PULOS:
 		pulos += 1
 		velocity.y = JUMP_SPEED
-	
+
 	velocity += forca_corda
-	
+
 	move_and_slide()
-	
+
 	checarColisaoEspinho()
+	atualizarAnimacao(direction)

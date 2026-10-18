@@ -10,7 +10,7 @@ var P1_puxando = false
 var P2_puxando = false
 
 const forca_maxima = 100
-const forca_puxada = 30
+const forca_puxada = 100
 const distancia_corda = 400
 
 
