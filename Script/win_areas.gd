@@ -9,4 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if get_node("WinAreaP1").playerNaArea and get_node("WinAreaP2").playerNaArea:
-		get_tree().change_scene_to_file("res://Cenas/Levels/" + proximoNivel + ".tscn")
+		var next_level_path = "res://Cenas/Levels/" + proximoNivel + ".tscn"
+		if ResourceLoader.exists(next_level_path):
+			get_tree().change_scene_to_file(next_level_path)
+		else:
+			print("Erro. ", next_level_path, " Não exsite")
