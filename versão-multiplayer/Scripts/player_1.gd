@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var forca_corda = Vector2.ZERO
+
 var pulos: int = 0
 const max_pulos: int = 2
 
