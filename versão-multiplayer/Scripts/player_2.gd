@@ -14,52 +14,24 @@ const DASH_SPEED = 1000
 var direcao_olhando = 0
 var forca_corda = Vector2.ZERO
 
-const ESCADA_VELOCIDADE = 150
-var na_escada = false
-
 #controle da habilidade
 var pode_dar_dash: bool = false
 var dash_timer = 0.0
 
-@rpc("any_peer", "call_local", "reliable")
-func entrar_na_escada() -> void:
-	if not is_multiplayer_authority():
-		return
-	na_escada = true
-
-@rpc("any_peer", "call_local", "reliable")
-func sair_da_escada() -> void:
-	if not is_multiplayer_authority():
-		return
-	na_escada = false
-
-@rpc("any_peer", "call_remote", "reliable")
 func resetarProSpawn() -> void:
-	na_escada = false
-	if spawn_point != null:
-		global_position = spawn_point.global_position
-	else:
-		print("Spawn point invalido do P2!")
+	self.global_position = spawn_point.global_position
 
 func morrer() -> void:
 	resetarProSpawn()
-	var player1 = get_node("../1")
-	if player1 != null:
-		player1.resetarProSpawn.rpc_id(
-			player1.get_multiplayer_authority()
-		)
-	else:
-		print("Falha em achar Player1 ")
+	get_node("../1").resetarProSpawn()
 
 func _ready() -> void:
-	if spawn_point == null:
-		print("Spawn point invalido do P2!")
 	resetarProSpawn()
 	var id = int(name)
 	var cordaInstanciar: Node
 	cordaInstanciar = corda.instantiate()
 	
-	cordaInstanciar.name = "Corda"
+	cordaInstanciar.name = name
 	cordaInstanciar.set_multiplayer_authority(id)
 
 	get_parent().add_child(cordaInstanciar)
@@ -79,9 +51,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		pode_dar_dash = true
 
-	if na_escada and Input.is_action_pressed("ui_up"):
-		velocity.y = -ESCADA_VELOCIDADE
-	elif Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("ui_left", "ui_right")
