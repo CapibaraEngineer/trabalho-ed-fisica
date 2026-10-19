@@ -28,6 +28,8 @@ func sair_da_escada() -> void:
 
 func resetarProSpawn() -> void:
 	na_escada = false
+	dash_timer = 0
+	velocity = Vector2.ZERO
 	if spawn_point != null:
 		global_position = spawn_point.global_position
 	else:

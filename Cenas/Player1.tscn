@@ -1,22 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1qnkihm1p6hg"]
+[gd_scene format=3 uid="uid://d1qnkihm1p6hg"]
 
 [ext_resource type="Script" uid="uid://cvwh5wa51g4el" path="res://Script/Player_1.gd" id="1_f52cm"]
-[ext_resource type="SpriteFrames" path="res://sprites/ademar-rosio/ademar_animations.tres" id="2_anim"]
+[ext_resource type="SpriteFrames" uid="uid://t4bp5p1j8b3l" path="res://sprites/ademar-rosio/ademar_animations.tres" id="2_anim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuq4w"]
-size = Vector2(27, 54)
+size = Vector2(16, 32)
 
 [node name="Player1" type="CharacterBody2D" unique_id=1248487080]
 collision_layer = 2
 script = ExtResource("1_f52cm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384236363]
-position = Vector2(13.5, 27)
+position = Vector2(8, 16)
 shape = SubResource("RectangleShape2D_cuq4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1575652046]
-position = Vector2(13.499999, 24.5)
-scale = Vector2(1.46875, 1.2826086)
+position = Vector2(7.999999, 14.55)
+scale = Vector2(0.81250006, 0.76304346)
 sprite_frames = ExtResource("2_anim")
 animation = &"idle"
 autoplay = "idle"

@@ -2,15 +2,33 @@
 
 [ext_resource type="Texture2D" uid="uid://vj00k7bukpyp" path="res://TileSets/Espinhos_tileset.png" id="1_8i8iv"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skgr4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i8iv"]
 texture = ExtResource("1_8i8iv")
-1:5/0 = 0
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, 0.08992958, -8)
-2:5/0 = 0
-2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -0.08992958, 0.5395775)
-3:5/0 = 0
-3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -0.26978874, 4.6763268)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.8093643, -8, -8, 8, 8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.08992958, -2.3381624, -8, 8, 8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -0.62950706, 1.978447, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.62950706, 1.978447, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 3.6871033, -0.17985725, 8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.2482338, 0.35971832, -8, 8, -8, -8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.9892235, -0.71943474, 8, 8, 8, -8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, -0.62950706, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.08992958, 1.4388714, -8, -8, 8, -8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -0.08992958, -3.057598, -8, -8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 0)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.8992939, 8, 8, 8, -8)
 
 [resource]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_skgr4")
+sources/4 = SubResource("TileSetAtlasSource_8i8iv")
