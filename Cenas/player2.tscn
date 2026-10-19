@@ -4,19 +4,19 @@
 [ext_resource type="SpriteFrames" uid="uid://767bbyhi3bb5" path="res://sprites/garibaldo-verdinho/garibaldo_animations.tres" id="2_anim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8plo"]
-size = Vector2(16, 32)
+size = Vector2(8, 27)
 
 [node name="Player2" type="CharacterBody2D" unique_id=742366973]
 collision_layer = 2
 script = ExtResource("1_r322i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1041543593]
-position = Vector2(8.499999, 15.999999)
-scale = Vector2(1.03125, 1.125)
+position = Vector2(9, 35.25)
+scale = Vector2(1.125, 1.140625)
 sprite_frames = ExtResource("2_anim")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239932380]
-position = Vector2(8, 16)
+position = Vector2(9, 35)
 shape = SubResource("RectangleShape2D_b8plo")

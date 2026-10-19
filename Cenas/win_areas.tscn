@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c83uu0uapfvq3" path="res://Script/win_areas.gd" id="1_lcmjs"]
 [ext_resource type="Script" uid="uid://60bmxb00iic0" path="res://Script/win_area_check.gd" id="2_hja3n"]
+[ext_resource type="Texture2D" uid="uid://dxb4euo04b000" path="res://sprites/AdemarCor.png" id="3_yvk0i"]
+[ext_resource type="Texture2D" uid="uid://b5jniij0qcx06" path="res://sprites/garibaldo-cor.png" id="4_7ik3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lweaw"]
 size = Vector2(96.5, 74.75)
@@ -18,6 +20,11 @@ playerChecado = "Player1"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinAreaP1" unique_id=378407727]
 shape = SubResource("RectangleShape2D_lweaw")
 
+[node name="Sprite2D" type="Sprite2D" parent="WinAreaP1" unique_id=1019281884]
+position = Vector2(0.50000095, -1.9073486e-06)
+scale = Vector2(3.03125, 1.6086956)
+texture = ExtResource("3_yvk0i")
+
 [node name="WinAreaP2" type="Area2D" parent="." unique_id=1819418861]
 position = Vector2(64, -2)
 collision_mask = 3
@@ -26,3 +33,7 @@ playerChecado = "Player2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinAreaP2" unique_id=1138491590]
 shape = SubResource("RectangleShape2D_lweaw")
+
+[node name="Sprite2D" type="Sprite2D" parent="WinAreaP2" unique_id=2130855968]
+scale = Vector2(3, 2.3125)
+texture = ExtResource("4_7ik3v")
