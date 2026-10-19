@@ -9,5 +9,6 @@ Jogo de plataforma co-op para 2 jogadores feito em Godot 4.7.
 - [Player1.md](Player1.md) - Script do jogador 1
 - [Player2.md](Player2.md) - Script do jogador 2
 - [Corda.md](Corda.md) - Mecânica da corda
-- [WinAreas.md](WinAreas.md) - Sistema de vitória
+- [win_areas.tscn.md](win_areas.tscn.md) - Sistema de vitória
 - [Cenas.md](Cenas.md) - Estrutura das cenas
+- [gameTileMap.tscn.md](gameTileMap.tscn.md) - TileMap do jogo
