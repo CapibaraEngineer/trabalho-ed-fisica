@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bihv7jgv6akj5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cuq4w"]
+
+[node name="ControlesMobile" type="CanvasLayer" unique_id=1993144458]
+
+[node name="Interface" type="Control" parent="." unique_id=187415108]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P1_Esquerda" type="TouchScreenButton" parent="Interface" unique_id=337531885]
+position = Vector2(-50.999992, 373)
+scale = Vector2(74, 57.000004)
+texture_normal = SubResource("PlaceholderTexture2D_cuq4w")
+action = "P1 esquerda"
+
+[node name="P1_Direita" type="TouchScreenButton" parent="Interface" unique_id=1192271025]
+action = "P1 direita"
+
+[node name="P1_Pulo" type="TouchScreenButton" parent="Interface" unique_id=1519509080]
+action = "P1 pulo"
+
+[node name="P1_PuxarCorda" type="TouchScreenButton" parent="Interface" unique_id=77118913]
+action = "P1 puxar corda"
+
+[node name="P1_ConectarCorda" type="TouchScreenButton" parent="Interface" unique_id=1265056756]
+action = "conectar corda"
+
+[node name="P2_Esquerda" type="TouchScreenButton" parent="Interface" unique_id=874337598]
+action = "P2 esquerda"
+
+[node name="P2_Direita" type="TouchScreenButton" parent="Interface" unique_id=1284432248]
+action = "P2 direita"
+
+[node name="P2_Pulo" type="TouchScreenButton" parent="Interface" unique_id=839898186]
+action = "P2 pulo"
+
+[node name="P2_PuxarCorda" type="TouchScreenButton" parent="Interface" unique_id=928349117]
+action = "P2 puxar corda"
+
+[node name="P2_ConectarCorda" type="TouchScreenButton" parent="Interface" unique_id=1321166648]
+action = "conectar corda"
+
+[node name="P2_Dash" type="TouchScreenButton" parent="Interface" unique_id=720713121]
+action = "P2 dash"

@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://osogr3ps4ssd"]
 
 [ext_resource type="PackedScene" uid="uid://d1qnkihm1p6hg" path="res://Cenas/Player1.tscn" id="1_bmld1"]
-[ext_resource type="PackedScene" uid="uid://qe2l2qv83skb" path="res://Cenas/Player2.tscn" id="2_1hyti"]
+[ext_resource type="PackedScene" uid="uid://qe2l2qv83skb" path="res://Cenas/player2.tscn" id="2_1hyti"]
 [ext_resource type="PackedScene" uid="uid://dgejegbhcpao3" path="res://Cenas/win_areas.tscn" id="3_7q414"]
+[ext_resource type="Texture2D" uid="uid://o8j7fdpxva5g" path="res://sprites/background.png" id="4_7q414"]
 [ext_resource type="PackedScene" uid="uid://bu7yxo5l0olrx" path="res://Cenas/corda.tscn" id="4_ya8gf"]
 [ext_resource type="PackedScene" uid="uid://bbvqvegtv61u0" path="res://Cenas/gameTileMap.tscn" id="5_jyrdj"]
 [ext_resource type="Script" uid="uid://blw7m6f421rus" path="res://Script/camera_fit.gd" id="6_1hyti"]
@@ -16,6 +17,12 @@
 [node name="WinAreas" parent="." unique_id=879724064 instance=ExtResource("3_7q414")]
 position = Vector2(905, 261)
 proximoNivel = "Fim"
+
+[node name="Sprite2D" type="Sprite2D" parent="WinAreas" unique_id=1587981802]
+z_index = -300
+position = Vector2(-380.50003, -13.000011)
+scale = Vector2(1.1774193, 0.9775147)
+texture = ExtResource("4_7q414")
 
 [node name="Corda" parent="." unique_id=694860497 instance=ExtResource("4_ya8gf")]
 

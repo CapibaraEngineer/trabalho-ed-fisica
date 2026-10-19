@@ -4,19 +4,19 @@
 [ext_resource type="SpriteFrames" uid="uid://t4bp5p1j8b3l" path="res://sprites/ademar-rosio/ademar_animations.tres" id="2_anim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuq4w"]
-size = Vector2(16, 32)
+size = Vector2(8, 36)
 
 [node name="Player1" type="CharacterBody2D" unique_id=1248487080]
 collision_layer = 2
 script = ExtResource("1_f52cm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384236363]
-position = Vector2(8, 16)
+position = Vector2(16, 32)
 shape = SubResource("RectangleShape2D_cuq4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1575652046]
-position = Vector2(7.999999, 14.55)
-scale = Vector2(0.81250006, 0.76304346)
+position = Vector2(15.999998, 28)
+scale = Vector2(1.0000001, 1.1304346)
 sprite_frames = ExtResource("2_anim")
 animation = &"idle"
 autoplay = "idle"

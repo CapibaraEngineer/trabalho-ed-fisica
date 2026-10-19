@@ -8,13 +8,15 @@ const GRAVITY = 1000
 const SPEED = 300
 const JUMP_VELOCITY = -350
 const ESCADA_VELOCIDADE = 150
+const COYOTE_TIME = 0.12
+var coyote_timer = 0.0
 var direcao_olhando = 0 #facing_direction, pra que direcao o jogador está olhando
 var forca_corda = Vector2.ZERO
 var na_escada = false
 
 #especificações do dash
-const DASH_DURATION = 0.3
-const DASH_SPEED = 1000
+const DASH_DURATION = 0.6
+const DASH_SPEED = 500
 
 #controle da habilidade
 var pode_dar_dash = true
@@ -85,12 +87,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -ESCADA_VELOCIDADE
 	elif is_on_floor():
 		pode_dar_dash = true
+		coyote_timer = COYOTE_TIME
 	else: #not is_on_floor()
+		coyote_timer = maxf(coyote_timer - delta, 0.0)
 		if not dash_timer > 0.0:
 			velocity.y += GRAVITY * delta
 		else :
 			velocity.y = 0
-	if not na_escada and Input.is_action_just_pressed("P2 pulo") and is_on_floor():
+	if not na_escada and Input.is_action_just_pressed("P2 pulo") and (coyote_timer > 0.0 or is_on_floor()):
 		velocity.y = JUMP_VELOCITY
 
 	# dash

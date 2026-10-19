@@ -1,20 +1,25 @@
 [gd_scene format=3 uid="uid://dg2yyt1c0b6sh"]
 
 [ext_resource type="Script" uid="uid://bc507ywps0sy0" path="res://Script/escada.gd" id="1_escada"]
+[ext_resource type="Texture2D" uid="uid://d3rp5gv085bsy" path="res://sprites/escada.png" id="2_tpa75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_escada"]
 size = Vector2(40, 160)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_escada"]
-
 [node name="Escada" type="Area2D" unique_id=1938658218]
+texture_repeat = 2
 scale = Vector2(1, 0.24000046)
 collision_mask = 2
 script = ExtResource("1_escada")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411559101]
+texture_repeat = 2
 shape = SubResource("RectangleShape2D_escada")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=686571216]
-scale = Vector2(40, 160)
-texture = SubResource("PlaceholderTexture2D_escada")
+texture_repeat = 2
+position = Vector2(-4.7683716e-07, -7.6293945e-06)
+scale = Vector2(2.5, 4.947907)
+texture = ExtResource("2_tpa75")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)

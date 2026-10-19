@@ -8,7 +8,9 @@ const GRAVITY = 1000
 const JUMP_SPEED = -400
 const MAXIMO_DE_PULOS = 2
 const ESCADA_VELOCIDADE = 150
+const COYOTE_TIME = 0.12
 var pulos = 0
+var coyote_timer = 0.0
 var forca_corda = Vector2.ZERO
 var na_escada = false
 var direcao_olhando = 1
@@ -72,12 +74,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -ESCADA_VELOCIDADE
 	elif is_on_floor():
 		pulos = 0
+		coyote_timer = COYOTE_TIME
 	else: #not is_on_floor()
+		coyote_timer = maxf(coyote_timer - delta, 0.0)
 		if pulos == 0:
 			pulos = 1
 		velocity.y += GRAVITY * delta
 
-	if not na_escada and Input.is_action_just_pressed("P1 pulo") and pulos < MAXIMO_DE_PULOS:
+	if not na_escada and Input.is_action_just_pressed("P1 pulo") and (coyote_timer > 0.0 or pulos < MAXIMO_DE_PULOS):
 		pulos += 1
 		velocity.y = JUMP_SPEED
 
