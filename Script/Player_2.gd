@@ -46,7 +46,7 @@ func _ready() -> void:
 		global_position = spawn_point.global_position
 	else:
 		print("Spawn point invalido do P2!")
-	
+
 func checarColisaoEspinho() -> void:
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i).get_collider()
