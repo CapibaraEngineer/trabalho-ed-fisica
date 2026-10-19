@@ -6,7 +6,7 @@ Conecta os dois jogadores. Quando conectada, aplica força para mantê-los próx
 
 ## Constantes
 - forca_maxima = 100
-- forca_puxada = 30
+- forca_puxada = 100
 - distancia_corda = 400
 
 ## Lógica
