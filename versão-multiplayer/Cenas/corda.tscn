@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ceo32k23ruwau"]
 
-[ext_resource type="Script" uid="uid://vwf0tsyl8f2x" path="res://Scripts/corda.gd" id="1_tqlyh"]
+[ext_resource type="Script" uid="uid://bfx1fbco2txt2" path="res://Scripts/corda.gd" id="1_tqlyh"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tqlyh"]
 properties/0/path = NodePath(".:points")
@@ -11,7 +11,6 @@ properties/1/spawn = true
 properties/1/replication_mode = 1
 
 [node name="Corda" type="Line2D" unique_id=1335741665]
-width = 5.0
 script = ExtResource("1_tqlyh")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=969529440]

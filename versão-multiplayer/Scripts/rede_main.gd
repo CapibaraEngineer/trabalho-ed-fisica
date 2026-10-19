@@ -8,10 +8,6 @@ extends Node
 
 
 func _ready() -> void:
-	multiplayer.connected_to_server.connect(_ao_conectar)
-	multiplayer.connection_failed.connect(_ao_falhar)
-	multiplayer.server_disconnected.connect(_ao_desconectar)
-	multiplayer.peer_disconnected.connect(_jogador_desconectado)
 	spawner.spawn_path = NodePath("../Jogadores")
 	spawner.spawn_function = Callable(self, "_spawn_player")
 	if multiplayer.is_server():
@@ -19,7 +15,10 @@ func _ready() -> void:
 		spawner.spawn({"peer_id": 1})
 		for peer_id in multiplayer.get_peers():
 			spawner.spawn({"peer_id": peer_id})
-
+	multiplayer.connected_to_server.connect(_ao_conectar)
+	multiplayer.connection_failed.connect(_ao_falhar)
+	multiplayer.server_disconnected.connect(_ao_desconectar)
+	multiplayer.peer_disconnected.connect(_jogador_desconectado)
 
 func _on_peer_connected(id: int):
 	if multiplayer.is_server():
@@ -55,6 +54,5 @@ func _jogador_desconectado(id : int):
 	var personagem = jogadores.get_node_or_null(str(id))
 	if personagem:
 		personagem.queue_free()
-		jogadores.get_node("Corda").queue_free()
 
 	print("Jogador desconectado. ID: ", id)
